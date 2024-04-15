@@ -7,8 +7,20 @@ def gross_pay(hours, rate):
         pay = (rate * 40) + (1.5 * rate * overtime)
         return pay
 
-hours = float(input("Enter number of hours: "))
+
+def check_for_input(u_input):
+    try:
+        val = float(u_input)
+        return val
+    except:
+        print("Error, Please enter numeric value")
+        quit()
+
+
+hours = float(input("Enter number of hours:"))
+print(check_for_input(hours))
 rate = float(input("Enter rate: "))
+print(check_for_input(rate))
 
 print(gross_pay(hours, rate))
 
